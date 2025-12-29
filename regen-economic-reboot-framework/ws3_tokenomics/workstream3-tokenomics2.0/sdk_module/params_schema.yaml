@@ -1,0 +1,33 @@
+version: v0.1
+module: x/feemodule
+params:
+  FeeRate:
+    type: decimal
+    default: 0.02
+    min: 0.005
+    max: 0.05
+    description: "Registry fee as a percentage of credit value routed through FeeRouter."
+  BurnShare:
+    type: decimal
+    default: 0.50
+    min: 0.30
+    max: 0.60
+    description: "Portion of collected fees to burn."
+  ValidatorShare:
+    type: decimal
+    default: 0.25
+    min: 0.20
+    max: 0.40
+    description: "Portion of collected fees paid to PoA validators."
+  CommunityShare:
+    type: decimal
+    default: 0.25
+    min: 0.20
+    max: 0.40
+    description: "Portion of collected fees routed to the Community Pool / ReFi Bridge."
+  MaxFeeRate:
+    type: decimal
+    default: 0.05
+    description: "Safety cap preventing misconfigured governance proposals."
+constraints:
+  - "BurnShare + ValidatorShare + CommunityShare == 1.0"

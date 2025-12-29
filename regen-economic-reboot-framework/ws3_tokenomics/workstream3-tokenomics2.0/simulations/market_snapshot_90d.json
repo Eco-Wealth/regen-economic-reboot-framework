@@ -1,0 +1,67 @@
+{
+  "analysis_period": {
+    "time_period": "90d",
+    "period_days": 90,
+    "analysis_date": "2025-12-28T02:18:56.545221"
+  },
+  "overall_metrics": {
+    "total_orders": 26,
+    "total_volume": 28229.222507000002,
+    "total_value_uregen": 25961800000.0,
+    "active_credit_types": [
+      "C",
+      "BT"
+    ],
+    "unique_batches": 11
+  },
+  "by_credit_type": {
+    "C": {
+      "orders": 19,
+      "volume": 20740.222507000002,
+      "value_uregen": 25936850000.0,
+      "batches": 10,
+      "avg_order_size": 1091.590658263158,
+      "avg_price_uregen": 273907279.3313858,
+      "price_range": {
+        "min": 329.2777979234658,
+        "max": 5000000000.0,
+        "spread": 4999999670.722202
+      },
+      "volatility_percent": 1825.44
+    },
+    "BT": {
+      "orders": 1,
+      "volume": 7489.0,
+      "value_uregen": 24950000.0,
+      "batches": 1,
+      "avg_order_size": 7489.0,
+      "avg_price_uregen": 3331.5529443183336,
+      "price_range": {
+        "min": 3331.5529443183336,
+        "max": 3331.5529443183336,
+        "spread": 0.0
+      },
+      "volatility_percent": 0.0
+    }
+  },
+  "trend_direction": {
+    "C": {
+      "price_trend": "stable",
+      "volume_trend": "increasing",
+      "order_trend": "stable"
+    },
+    "BT": {
+      "price_trend": "stable",
+      "volume_trend": "increasing",
+      "order_trend": "stable"
+    }
+  },
+  "methodology": {
+    "data_sources": [
+      "current_sell_orders",
+      "credit_classes",
+      "credit_batches"
+    ],
+    "limitations": "Historical data simulation - real trends would require time-series data"
+  }
+}

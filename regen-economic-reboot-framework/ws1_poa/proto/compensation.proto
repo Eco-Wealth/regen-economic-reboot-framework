@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package regen.compensation.v1;
+
+// NOTE: This is a spec-level proto draft. R&D should align imports/annotations
+// with the regen-ledger protobuf conventions before codegen.
+
+message Params {
+  string fee_denom = 1;              // e.g. uregen
+  string validator_fraction = 2;     // decimal string (e.g. "0.70")
+  string burn_fraction = 3;          // decimal string (e.g. "0.20")
+  string community_fraction = 4;     // decimal string (e.g. "0.10")
+  string beta_max = 5;               // decimal string (e.g. "0.15")
+}
+
+message ValidatorRewardRecord {
+  string authority_id = 1;
+  string epoch_id = 2;
+  string amount = 3;                // integer as string (coin amount)
+  string weight = 4;                // decimal string (1 + beta)
+}
+
+// Msgs
+message MsgDistributeRewards {
+  string epoch_id = 1;
+  string initiator = 2;
+}
+message MsgDistributeRewardsResponse {
+  repeated ValidatorRewardRecord records = 1;
+}
+
+// Queries
+message QueryRewardsRequest {
+  string authority_id = 1;
+}
+message QueryRewardsResponse {
+  repeated ValidatorRewardRecord records = 1;
+}

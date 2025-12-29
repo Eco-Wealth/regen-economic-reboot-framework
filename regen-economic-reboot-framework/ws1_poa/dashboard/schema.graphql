@@ -1,0 +1,7 @@
+type ValidatorMetrics {
+  id: ID!
+  organization: String!
+  uptime: Float!
+  performance_score: Float!
+  epoch_pay: String!
+}

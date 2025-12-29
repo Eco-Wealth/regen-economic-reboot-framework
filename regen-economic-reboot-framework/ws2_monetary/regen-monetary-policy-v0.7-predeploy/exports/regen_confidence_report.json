@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2025-12-28T02:06:48.780016+00:00",
+  "epochs": 1000,
+  "confidence_score": 0.999,
+  "control": {
+    "alpha_min_obs": 0.7,
+    "alpha_max_obs": 0.7,
+    "beta_min_obs": 1.0,
+    "beta_max_obs": 1.0,
+    "alpha_max_step": 0.0,
+    "beta_max_step": 0.0
+  },
+  "infl_mean": 0.0016417527297226378,
+  "infl_std": 0.0007070502523333892,
+  "fund_drift_pct": 0.0,
+  "eco_infl_corr": 0.016520138546560183,
+  "eco_burn_corr": -0.0017615113143579686,
+  "eco_burn_per_fee_corr": 1.0,
+  "eco_coupling_expected": 0.020000000000000004,
+  "eco_coupling_slope": 0.020000000000000188,
+  "burn_to_mint_ratio": 0.46861831446606594,
+  "alpha_min": 0.7,
+  "alpha_max": 0.7,
+  "beta_min": 1.0,
+  "beta_max": 1.0,
+  "note": "Offline audit uses synthetic live-style volatility; replace eco/throughput feeds with chain telemetry for production calibration."
+}
