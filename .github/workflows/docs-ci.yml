@@ -1,0 +1,39 @@
+name: Docs CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  markdown_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown lint (non-blocking)
+        continue-on-error: true
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: |
+            regen-economic-reboot-framework/**/*.md
+
+  link_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link check (non-blocking)
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --exclude-mail
+            --max-concurrency 8
+            --timeout 20
+            regen-economic-reboot-framework/**/*.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
