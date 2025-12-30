@@ -12,11 +12,11 @@ It includes:
 ## Quick start (dev)
 1. Install Rust stable + wasm target:
    - `rustup target add wasm32-unknown-unknown`
-2. Build:
+1. Build:
    - `cargo build --release --target wasm32-unknown-unknown`
-3. Run unit tests:
+1. Run unit tests:
    - `cargo test`
-4. Schema (optional):
+1. Schema (optional):
    - `cargo run -p bond_series --example schema`
    - `cargo run -p bond_factory --example schema`
 
@@ -25,7 +25,6 @@ This is a **skeleton** designed to accelerate real implementation. It compiles, 
 
 ## License
 Apache-2.0 (placeholder — update to match your project policy).
-
 
 ## Supplement docs
 See `docs/*_SUPPLEMENT.md` for deterministic math, oracle wiring spec, acceptance tests, and a paste-ready forum follow-up.

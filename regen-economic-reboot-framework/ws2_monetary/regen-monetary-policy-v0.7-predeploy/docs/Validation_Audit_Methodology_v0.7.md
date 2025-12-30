@@ -10,13 +10,13 @@ This audit is designed to “spoon-feed” engineers by providing:
 1. Economic stability
    - inflation mean and volatility
    - burn/mint ratio
-2. Validator solvency
+1. Validator solvency
    - validator fund drift under volatility
-3. Ecological coupling behavior
+1. Ecological coupling behavior
    - correlation of EcoIndex with inflation response
-4. Control stability (bounded adaptation)
+1. Control stability (bounded adaptation)
    - proxy Lyapunov-like metrics on alpha/beta changes
-5. Sensitivity analysis
+1. Sensitivity analysis
    - heatmap of net mint across EcoIndex × throughput grid
 
 ## What is not tested (yet)

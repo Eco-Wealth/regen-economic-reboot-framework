@@ -1,13 +1,15 @@
 # Regen Monetary Policy v0.7-predeploy
 
-This repository bundle contains an **offline deep validation audit** plus a **reference simulation** for the Regen Economic Reboot Workstream 2: *Fixed Cap + Dynamic Supply*.
+This repository bundle contains an **offline deep validation audit**plus a**reference simulation**for the Regen Economic Reboot Workstream 2:*Fixed Cap + Dynamic Supply*.
 
 ## Quickstart (engineers)
 
 Run the deep audit:
 
 ```bash
+
 python simulation/regen_validation_audit_v0.7.py
+
 ```
 
 Outputs (CSV + PNG charts + JSON confidence report) are written to:
@@ -21,7 +23,9 @@ Outputs (CSV + PNG charts + JSON confidence report) are written to:
 Run the core simulator:
 
 ```bash
+
 python simulation/regen_dynamic_supply_v0.6.py
+
 ```
 
 ## What this is

@@ -1,0 +1,71 @@
+name: Workstream 3 — Tokenomics 2.0 CI
+
+on:
+  push:
+    paths:
+      - "workstream3-tokenomics2.0/**"
+      - ".github/workflows/tokenomics2-ci.yml"
+  pull_request:
+    branches: [ "main", "develop" ]
+    paths:
+      - "workstream3-tokenomics2.0/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Markdown lint
+        uses: avto-dev/markdown-lint@v1
+        with:
+          args: "workstream3-tokenomics2.0/**/*.md"
+          config: ".markdownlint.yaml"
+
+      - name: Validate simulation CSV
+        run: |
+          python3 - <<'PY'
+          import pandas as pd
+          df = pd.read_csv('workstream3-tokenomics2.0/simulations/fee_split_simulation.csv')
+          required = {'scenario','throughput_90d_uregen','fee_rate','total_fees_90d_uregen','burn_90d_uregen','validator_90d_uregen','community_90d_uregen','burn_pct_of_total_supply'}
+          missing = required - set(df.columns)
+          assert not missing, f"Missing columns: {missing}"
+          assert (df['fee_rate'] > 0).all()
+          assert (df['burn_pct_of_total_supply'] < 0.01).all(), "Burn percent unexpectedly high"
+          print("Simulation integrity OK ✅")
+          PY
+
+      - name: Upload validation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tokenomics2-validation
+          path: workstream3-tokenomics2.0/simulations/
+
+  package-zip:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create zip
+        run: |
+          zip -r workstream3-tokenomics2.0.zip workstream3-tokenomics2.0
+
+      - name: Upload zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: workstream3-tokenomics2.0
+          path: workstream3-tokenomics2.0.zip
+
+  # Optional: Slack notification (requires repo secret SLACK_WEBHOOK_URL)
+  # notify-slack:
+  #   runs-on: ubuntu-latest
+  #   needs: package-zip
+  #   steps:
+  #     - name: Send Slack message
+  #       uses: slackapi/slack-github-action@v2
+  #       with:
+  #         payload: |
+  #           {"text":":rocket: Workstream 3 (Tokenomics 2.0) validated and packaged. ZIP artifact available in Actions run."}
+  #       env:
+  #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

@@ -1,29 +1,24 @@
 # Regen Ledger Proof-of-Authority (PoA) Migration Spec (v0.1)
 
-**Status:** Draft for engineering execution & community review  
-**Scope:** Workstream 1 from *Regen Economic Reboot Roadmap v0.1*  
-**Last updated:** 2025-12-28
+**Status:**Draft for engineering execution & community review**Scope:**Workstream 1 from*Regen Economic Reboot Roadmap v0.1* **Last updated:** 2025-12-28
 
 ---
 
 ## 0. Context and motivation
 
-Regen Ledger is currently described as a public Proof-of-Stake chain built on the Cosmos SDK.  
+Regen Ledger is currently described as a public Proof-of-Stake chain built on the Cosmos SDK.
 The PoA RFC and the Economic Reboot Roadmap discuss the need to stabilize validator costs and reduce reliance on inflationary emissions, given the current market/security realities.
 
 Primary source threads:
-- Regen Network Proof of Authority Consensus RFC: https://forum.regen.network/t/regen-network-proof-of-authority-consensus-rfc/70  
-- Regen Economic Reboot Roadmap v0.1: https://forum.regen.network/t/regen-economic-reboot-roadmap-v0-1/567  
+- Regen Network Proof of Authority Consensus RFC: https://forum.regen.network/t/regen-network-proof-of-authority-consensus-rfc/70
+- Regen Economic Reboot Roadmap v0.1: https://forum.regen.network/t/regen-economic-reboot-roadmap-v0-1/567
 
 ---
 
 ## 1. Objectives
 
 From the Economic Reboot Roadmap v0.1 (Workstream 1):
-- **Stabilize network costs**
-- **Remove inflationary emissions**
-- **Align validator incentives with real ecosystem performance**
-- Produce an engineer-executable **RFC + validator roster + migration plan**
+- **Stabilize network costs**-**Remove inflationary emissions**-**Align validator incentives with real ecosystem performance**- Produce an engineer-executable**RFC + validator roster + migration plan**
 
 ---
 
@@ -83,8 +78,7 @@ See `proto/authority.proto`.
 ## 4. Governance model
 
 ### 4.1 Authority lifecycle
-- **Nominate** → **Approve** (governance) → **Activate**
-- **Deactivate** (governance, emergency, or automatic SLA failure)
+- **Nominate**→**Approve**(governance) →**Activate**-**Deactivate** (governance, emergency, or automatic SLA failure)
 - **Rotate** (scheduled epoch boundary or governance-triggered)
 
 ### 4.2 Emergency controls
@@ -166,28 +160,26 @@ Minimum for “implementation-ready”:
 
 This repo provides those for v0.1.
 
-
 ---
 
 ## 9. Open engineering questions (must be resolved in regen-ledger implementation)
 
-1. **Validator set plumbing**
-   - Will Regen implement PoA by **repurposing `x/staking`** (permissioned validator set, fixed power) or by introducing a **new validator-update provider** module?
+1. **Validator set plumbing**- Will Regen implement PoA by**repurposing `x/staking`**(permissioned validator set, fixed power) or by introducing a**new validator-update provider** module?
    - What is the minimal change that produces deterministic CometBFT `ValidatorUpdate`s without delegation economics?
 
-2. **Delegations / staking UX**
+1. **Delegations / staking UX**
    - If `x/staking` remains for compatibility, how are delegations handled (disabled, ignored, or migrated)?
    - If `x/staking` is removed, what are the migration implications for modules that assume staking exists?
 
-3. **Performance scoring source of truth**
+1. **Performance scoring source of truth**
    - Which signals are strictly on-chain (missed blocks, downtime) vs oracle-fed?
    - If oracle-fed, what is the on-chain anchoring mechanism and dispute process?
 
-4. **Fee routing inventory**
+1. **Fee routing inventory**
    - Identify every fee stream (marketplace, ecocredit issuance, tx fees) and confirm where it lands today.
-   - Decide whether validator pay is taken **before** burn, **after** burn, or as a replacement of governance-manual burn steps.
+   - Decide whether validator pay is taken **before**burn,**after** burn, or as a replacement of governance-manual burn steps.
 
-5. **Governance authority**
+1. **Governance authority**
    - Will authority management live in `x/gov` proposals, `x/group` DAOs, or both?
    - Define the exact threshold and veto rules for emergency actions.
 

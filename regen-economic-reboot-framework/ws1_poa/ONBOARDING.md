@@ -1,6 +1,6 @@
 # Developer Onboarding — Regen PoA Migration v0.1
 
-This repo is a **specification + simulation pack** intended to be *pulled into* Regen Ledger R&D work.
+This repo is a **specification + simulation pack**intended to be*pulled into* Regen Ledger R&D work.
 It does not (yet) compile into a live chain binary by itself.
 
 ---
@@ -16,13 +16,19 @@ Start here:
 No Cosmos SDK required.
 
 ### Run unit tests
+
 ```bash
+
 python -m unittest discover -s tests -v
+
 ```
 
 ### Run the example scenario
+
 ```bash
+
 python sim/poa_simulator.py sim/scenarios/example_epoch.json
+
 ```
 
 ---

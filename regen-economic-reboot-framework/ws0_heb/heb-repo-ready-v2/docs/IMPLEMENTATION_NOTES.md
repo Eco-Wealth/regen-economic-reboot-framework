@@ -12,10 +12,10 @@ Indexing model: a global interest index `I` tracks growth of 1 unit of principal
 
 Time: use `t` as seconds since epoch. For any accrual, let `dt = t_now - t_last_accrual`.
 
-APR conversion: APR in basis points `apr_bps` converts to per-second simple rate `r_ps = (apr_bps / 10_000) / seconds_per_year`. With integer math: `r_ps_scaled = apr_bps * S / (10_000 * 31_536_000)`.
+APR conversion: APR in basis points `apr_bps` converts to per-second simple rate `r_ps = (apr_bps / 10_000) / seconds_per_year`. With integer math: `r_ps_scaled = apr_bps *S / (10_000* 31_536_000)`.
 
 Accrual update: prefer simple interest per second for v0.1, compounding via index, implemented as:
-I_new = I_old + (I_old * r_ps_scaled * dt) / S
+I_new = I_old + (I_old *r_ps_scaled* dt) / S
 
 This yields continuous-ish compounding and is stable for small r_ps.
 

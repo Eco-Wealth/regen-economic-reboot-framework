@@ -1,12 +1,11 @@
 # Regen PoA Migration (v0.1) — Spec + Simulation Pack
 
-This repository is a **community-led, AI-assisted engineering handoff pack** for **Workstream 1: Consensus & Chain Security (PoA Migration)** from the *Regen Economic Reboot Roadmap v0.1*.
+This repository is a **community-led, AI-assisted engineering handoff pack**for**Workstream 1: Consensus & Chain Security (PoA Migration)**from the*Regen Economic Reboot Roadmap v0.1*.
 
 It is intended to help Regen R&D and contributors move from discussion → executable implementation plans.
 
 ## What this repo is
-- A **v0.1 specification** for migrating Regen Ledger from PoS to a **PoA-style permissioned authority set**
-- A **reference simulation** + test vectors for validator compensation funded by registry/network fees
+- A **v0.1 specification**for migrating Regen Ledger from PoS to a**PoA-style permissioned authority set**- A**reference simulation** + test vectors for validator compensation funded by registry/network fees
 - Protobuf message/interface drafts for `x/authority` and `x/compensation`
 
 ## What this repo is NOT
@@ -15,9 +14,12 @@ It is intended to help Regen R&D and contributors move from discussion → execu
 - A replacement for governance or legal review
 
 ## Quick Start (non-chain simulation)
+
 ```bash
+
 python -m unittest discover -s tests -v
 python sim/poa_simulator.py sim/scenarios/example_epoch.json
+
 ```
 
 ## Contents

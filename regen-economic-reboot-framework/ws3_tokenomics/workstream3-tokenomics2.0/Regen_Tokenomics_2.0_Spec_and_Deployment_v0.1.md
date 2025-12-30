@@ -1,8 +1,6 @@
 # Regen Tokenomics 2.0 — Workstream 3 Engineering Pack (v0.1)
 
-**Scope:** Tokenomics 2.0 (Economic Loop + ReFi Integration)  
-**Status:** Draft spec for engineer review + testnet execution  
-**Provenance:** Values in this pack come from GaiaAI tool calls performed in this chat session (see `/simulations/*.json`).
+**Scope:**Tokenomics 2.0 (Economic Loop + ReFi Integration)**Status:**Draft spec for engineer review + testnet execution**Provenance:** Values in this pack come from GaiaAI tool calls performed in this chat session (see `/simulations/*.json`).
 
 ## 1. Objective
 Ensure every registry and ReFi interaction creates REGEN-denominated economic coupling by routing a value-based fee into:

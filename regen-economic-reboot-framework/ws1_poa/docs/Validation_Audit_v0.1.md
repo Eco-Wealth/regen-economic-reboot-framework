@@ -43,5 +43,5 @@ This pack meets the **engineering-start threshold** for Track B because:
 
 ## 7. Next recommended validations (once integrated)
 1. Deterministic validator updates across nodes under authority rotations (testnet).
-2. Fee routing correctness against live modules (marketplace/ecocredit) and existing burn behavior.
-3. Adversarial tests: emergency removal, partial outages, and rollback plan rehearsal.
+1. Fee routing correctness against live modules (marketplace/ecocredit) and existing burn behavior.
+1. Adversarial tests: emergency removal, partial outages, and rollback plan rehearsal.
