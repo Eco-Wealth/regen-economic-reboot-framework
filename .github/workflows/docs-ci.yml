@@ -17,9 +17,9 @@ jobs:
       - name: Markdown lint (markdownlint-cli2)
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
+          config: regen-economic-reboot-framework/.markdownlint.jsonc
           globs: |
-            **/*.md
-          config: .markdownlint-cli2.jsonc
+            regen-economic-reboot-framework/**/*.md
 
   link_check:
     runs-on: ubuntu-latest
@@ -36,6 +36,6 @@ jobs:
             --exclude-mail
             --max-concurrency 8
             --timeout 20
-            "**/*.md"
+            regen-economic-reboot-framework/**/*.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
