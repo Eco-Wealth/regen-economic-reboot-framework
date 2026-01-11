@@ -1,0 +1,1 @@
+GaiaAI Input → KOI MCP → UX Schema → User Action → KOI Record
