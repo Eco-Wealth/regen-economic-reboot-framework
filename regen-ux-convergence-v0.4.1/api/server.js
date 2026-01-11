@@ -1,1 +1,0 @@
-console.log('Mock API Server for Regen UX Convergence v0.4.1 running...');
