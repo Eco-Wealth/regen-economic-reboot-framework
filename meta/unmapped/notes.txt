@@ -1,0 +1,2 @@
+Unmapped now contains only repo-wide tooling/config or empty placeholders that do not cleanly belong to a specific workstream folder.
+Workstream packs were attached under systems/ and ux/ per Option A.

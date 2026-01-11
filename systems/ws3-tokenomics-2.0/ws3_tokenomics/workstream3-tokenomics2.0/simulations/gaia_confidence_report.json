@@ -1,0 +1,31 @@
+{
+  "composite_confidence": 0.964,
+  "generated_at": "2025-12-28T02:18:56Z",
+  "inputs": {
+    "token_supply_query": {
+      "denom": "uregen",
+      "amount": "221794240734747"
+    },
+    "market_snapshot_summary": {
+      "total_orders": 26,
+      "total_volume": 28229.222507000002,
+      "total_value_uregen": 25961800000.0,
+      "active_credit_types": [
+        "C",
+        "BT"
+      ],
+      "unique_batches": 11
+    },
+    "assumed_fee_rate": 0.02,
+    "splits_tested": [
+      "40-30-30",
+      "50-25-25",
+      "60-20-20"
+    ]
+  },
+  "notes": [
+    "Token supply is a direct on-chain query (bank module).",
+    "Marketplace snapshot reflects active sell orders; it is a proxy for throughput, not full registry volume.",
+    "Trend series is simulated per GaiaAI tool limitation; use node-indexed time-series for production forecasts."
+  ]
+}

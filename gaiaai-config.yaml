@@ -1,3 +1,48 @@
+# GaiaAI Configuration for Regen Economic Reboot Framework
+
+version: v0.3
+generated: 2026-01-10
+description: "Unified coordination and simulation layer linking Regen Network's Regen Reboot v0.3 workstreams."
+
+workstreams:
+  ws0_contracts:
+    path: ./contracts/
+    description: "WS0 permissioned CosmWasm contract surfaces (HEB, Credit Lifecycle Controller, MRV Adapter)"
+    ai_link: true
+
+  ws1_poa:
+    path: ./systems/ws1-proof-of-authority/
+    description: "WS1 Proof of Authority (consensus + governance boundaries)"
+    ai_link: true
+
+  ws2_monetary:
+    path: ./systems/ws2-monetary-mechanics/
+    description: "WS2 Monetary mechanics (policy + simulations)"
+    ai_link: true
+
+  ws3_tokenomics:
+    path: ./systems/ws3-tokenomics-2.0/
+    description: "WS3 Tokenomics 2.0 (incentives, sinks, issuance/fees linkage)"
+    ai_link: true
+
+  ws4_market_governance_signaling:
+    path: ./systems/ws4-market-governance/
+    description: "WS4 Market + governance signaling and coordination mechanisms"
+    ai_link: true
+
+  ws5_ux_convergence:
+    path: ./ux/ws5-ux-convergence/
+    description: "WS5 UX Convergence (AI signal loops, schemas, validation pipelines)"
+    ai_link: true
+
+  forum_refs:
+    path: ./forum-refs/
+    description: "Forum-derived reference sources (context only)"
+    ai_link: true
+
+  meta:
+    path: ./meta/
+    description: "Indexes, refactor plans, and coordination layer"
 
 # GaiaAI Configuration for Regen Economic Reboot Framework
 
