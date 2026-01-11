@@ -1,0 +1,24 @@
+
+# GaiaAI Configuration for Regen Economic Reboot Framework
+
+version: v0.2-meta
+generated: 2025-12-27
+description: "Unified coordination and simulation layer linking Regen Network's economic reboot workstreams."
+
+workstreams:
+  ws0_heb:
+    path: ./ws0_heb/
+    description: "Hybrid Ecological Bond (Regen-native regenerative finance instrument)"
+    ai_link: true
+  ws1_poa:
+    path: ./ws1_poa/
+    ai_link: true
+  ws2_monetary:
+    path: ./ws2_monetary/
+    ai_link: true
+  ws3_tokenomics:
+    path: ./ws3_tokenomics/
+    ai_link: true
+  ws4_market_governance_signaling:
+    path: ./ws4_market_governance_signaling/
+    ai_link: true

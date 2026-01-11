@@ -1,0 +1,22 @@
+# Lychee link checker configuration
+# Keep CI green during large refactors by excluding legacy/packed content and build artifacts.
+exclude_path = [
+  "meta/unmapped/**",
+  "**/target/**",
+  "**/.git/**",
+  "**/node_modules/**",
+  "**/.venv/**",
+  "contracts/**/heb-workspace/target/**",
+  "contracts/**/heb-workspace/**/target/**",
+]
+
+# Don't fail CI on transient network issues
+max_retries = 2
+timeout = 20
+accept = ["200", "206", "429"]
+
+# Skip common non-links
+exclude = [
+  "mailto:",
+  "javascript:",
+]
