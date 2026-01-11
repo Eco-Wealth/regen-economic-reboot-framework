@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package regen.authority.v1;
+
+// NOTE: This is a spec-level proto draft. R&D should align imports/annotations
+// with the regen-ledger protobuf conventions before codegen.
+
+import "google/protobuf/any.proto";
+
+message Authority {
+  string authority_id = 1;              // bech32 valoper (operator identity)
+  string entity_type = 2;               // R&D | Partner | Steward | Community
+  string organization_name = 3;
+  google.protobuf.Any consensus_pubkey = 4; // CometBFT consensus key
+  uint64 power = 5;                     // authority voting power (PoA: governance-defined)
+  bool active = 6;
+  uint64 rotation_epoch_end = 7;
+  string compensation_address = 8;      // bech32 account addr
+  string metadata_uri = 9;
+  uint32 reputation_score = 10;
+}
+
+// Msgs
+message MsgRegisterAuthority {
+  Authority authority = 1;
+  string proposer = 2;
+}
+message MsgRegisterAuthorityResponse {}
+
+message MsgDeactivateAuthority {
+  string authority_id = 1;
+  string proposer = 2;
+}
+message MsgDeactivateAuthorityResponse {}
+
+message MsgRotateAuthorities {
+  repeated string authority_ids = 1; // new active set (or empty to auto-select)
+  string proposer = 2;
+}
+message MsgRotateAuthoritiesResponse {}
+
+// Queries
+message QueryAuthoritiesRequest {
+  bool active_only = 1;
+}
+message QueryAuthoritiesResponse {
+  repeated Authority authorities = 1;
+}
