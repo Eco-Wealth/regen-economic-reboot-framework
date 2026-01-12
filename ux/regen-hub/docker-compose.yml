@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  regen-hub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      # Example: configure Regen API proxy
+      # REGEN_API_BASE_URL: http://regen-api:8080
+      # KOI_API_BASE_URL: http://koi-api:8090
+      NODE_ENV: production
+
+  # Optional: wire these to your real services (or replace with the actual containers in your monorepo)
+  # regen-api:
+  #   image: <your-regen-api-image>
+  #   ports:
+  #     - '8080:8080'
+  # koi-api:
+  #   image: <your-koi-api-image>
+  #   ports:
+  #     - '8090:8090'
