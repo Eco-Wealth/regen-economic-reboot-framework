@@ -1,0 +1,6 @@
+{
+  "@context": "https://regen.network/schema#",
+  "@type": "regen:Methodology",
+  "schema:name": "Debt-for-Nature Clearing Protocol",
+  "schema:description": "Meta-methodology enabling debt clearing via verified ecological impact."
+}
