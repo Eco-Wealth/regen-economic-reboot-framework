@@ -1,0 +1,2 @@
+[workspace]
+members = ["contracts/rcl_line"]
