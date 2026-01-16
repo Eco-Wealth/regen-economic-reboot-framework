@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clickregen.example/schemas/receipt-envelope-v0.json",
+  "title": "ReceiptEnvelopeV0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "intentId",
+    "execRef",
+    "execRefHash",
+    "success",
+    "errorCode",
+    "stateHash",
+    "resultPayload"
+  ],
+  "properties": {
+    "v": {
+      "type": "string",
+      "const": "v0"
+    },
+    "intentId": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "execRef": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "execRefHash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "errorCode": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "stateHash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "resultPayload": {
+      "type": "string",
+      "pattern": "^0x([a-fA-F0-9]{2})*$"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 255 255 255;
+  --fg: 9 9 11;
+  --card: 255 255 255;
+  --border: 228 228 231;
+  --accent: 20 184 166;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 9 9 11;
+    --fg: 244 244 245;
+    --card: 24 24 27;
+    --border: 63 63 70;
+    --accent: 56 189 248;
+    color-scheme: dark;
+  }
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--fg));
+}

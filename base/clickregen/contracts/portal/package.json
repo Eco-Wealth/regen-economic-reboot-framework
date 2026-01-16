@@ -1,0 +1,20 @@
+{
+  "name": "@clickregen/portal",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.ts --network hardhat"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "ethers": "^6.12.0",
+    "chai": "^4.4.1",
+    "@types/chai": "^4.3.11",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.2",
+    "ts-node": "^10.9.2"
+  }
+}

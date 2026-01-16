@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clickregen.example/schemas/intent-envelope-v0.json",
+  "title": "IntentEnvelopeV0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "intentId",
+    "sourceChainId",
+    "evmSender",
+    "action",
+    "payload",
+    "expiry",
+    "nonce"
+  ],
+  "properties": {
+    "v": {
+      "type": "string",
+      "const": "v0"
+    },
+    "intentId": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "sourceChainId": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evmSender": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{40}$"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "CLICK",
+        "INFER",
+        "RETIRE",
+        "TASK"
+      ]
+    },
+    "payload": {
+      "type": "string",
+      "pattern": "^0x([a-fA-F0-9]{2})*$"
+    },
+    "expiry": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nonce": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 280
+    }
+  }
+}
