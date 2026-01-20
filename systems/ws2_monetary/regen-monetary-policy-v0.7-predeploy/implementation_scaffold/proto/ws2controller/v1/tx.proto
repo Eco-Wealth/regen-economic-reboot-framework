@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ws2controller.v1;
+
+option go_package = "github.com/regen-network/regen-ledger/x/ws2controller/types";
+
+// Minimal, optional: governance gates can be enforced at handler level.
+
+message MsgUpdateParams {
+  string authority = 1;
+  Params params = 2;
+}
+
+message MsgUpdateParamsResponse {}
+
+message Params {
+  string cap_total_supply = 1;
+  string max_mint_per_window = 2;
+  string max_burn_per_window = 3;
+  uint32 deadband_bps = 4;
+  string alpha = 5;
+  string beta = 6;
+  bool eco_index_enabled = 7;
+  string eco_index_weight = 8;
+}

@@ -1,0 +1,13 @@
+{
+  "connection_id": "connection-0",
+  "protocol": "IBC_V2",
+  "allowed_apps": [
+    "transfer"
+  ],
+  "allowed_channels": [
+    "channel-0"
+  ],
+  "asset_allowlist": [
+    "uregen"
+  ]
+}

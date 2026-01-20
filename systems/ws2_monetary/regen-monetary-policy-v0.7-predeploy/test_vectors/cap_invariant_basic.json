@@ -1,0 +1,8 @@
+{
+  "name": "cap_invariant_basic",
+  "denom": "uregen",
+  "cap_total_supply": "221000000000000",
+  "current_supply": "220999999900000",
+  "requested_mint": "200000",
+  "expected": "REJECT_CAP_EXCEEDED"
+}

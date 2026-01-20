@@ -1,0 +1,10 @@
+{
+  "preset_id": "PresetB_InterchainIsolation",
+  "disable_msg_type_urls": [
+    "/ibc.applications.transfer.v1.MsgTransfer"
+  ],
+  "keep_enabled_msg_type_urls": [
+    "/cosmos.gov.v1.MsgSubmitProposal",
+    "/cosmos.gov.v1.MsgVote"
+  ]
+}

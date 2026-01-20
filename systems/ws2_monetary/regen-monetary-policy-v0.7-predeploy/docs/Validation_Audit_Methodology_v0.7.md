@@ -1,5 +1,7 @@
 # Validation Audit Methodology v0.7
 
+> Note: This audit is *model-level*. Chain-level wiring assumes Cosmos SDK v0.53 (x/protocolpool, x/circuit) and IBC-Go v10+ (IBC v2 and 08-wasm).
+
 This audit is designed to “spoon-feed” engineers by providing:
 - deterministic code
 - reproducible datasets
